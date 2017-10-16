@@ -51,6 +51,10 @@ func main() {
 			Usage: "Use as select mode. In this case, users only select a value.",
 		},
 		cli.BoolFlag{
+			Name:  "indexmode, index",
+			Usage: "After rearranging source data, the change of index for the source data is output.",
+		},
+		cli.BoolFlag{
 			Name:  "history, hi",
 			Usage: "Show history of selected data.",
 		},
@@ -107,7 +111,7 @@ func getValues(filepath string) []string {
 
 // gorearrange : Handler for gorearrange
 func gorearrange(c *cli.Context) error {
-	result, history, err := rearrange.Do(getValues(c.String("inputfile")), c.Int("step"), c.Bool("selectmode"))
+	result, history, err := rearrange.Do(getValues(c.String("inputfile")), c.Int("step"), c.Bool("selectmode"), c.Bool("indexmode"))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)

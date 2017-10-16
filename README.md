@@ -69,4 +69,8 @@ Use up, down, page up, page down, home, end, enter, back space, Ctrl + c and esc
 
     Initial release.
 
+* v1.0.1 (October 16, 2017)
+
+    - As one of outputs, **indexmode (bool)** was added. If this is true, the rearranged result is output as the change of index for the source data. For example, if the source data and rearranged data are ``["a", "b", "c"]`` and ``["c", "b", "a"]``, respectively. The output will become ``[2, 1, 0]``.
+
 [TOP](#TOP)
