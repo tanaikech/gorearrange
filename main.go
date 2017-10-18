@@ -29,7 +29,7 @@ func main() {
 	app.Author = "tanaike [ https://github.com/tanaikech/gorearrange ] "
 	app.Email = "tanaike@hotmail.com"
 	app.Usage = "Manually rearrange text data."
-	app.Version = "1.0.1"
+	app.Version = "1.0.2"
 	app.Flags = []cli.Flag{
 		cli.IntFlag{
 			Name:  "step, s",
