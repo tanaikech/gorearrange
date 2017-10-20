@@ -62,8 +62,8 @@ Use up, down, page up, page down, home, end, enter, back space, Ctrl + c and esc
 | **Page up**, **Page down** | Moving several lines |
 | **Home**, **End** | Moving top and bottom of data |
 | **Enter** | Selecting a value to rearrange |
-| **Back space**, **Space** | Reset the rearranged data |
-| **Ctrl + c**, **Escape** | Finishing rearranging |
+| **Back space** or **Space** | Reset the rearranged data |
+| **Ctrl + c** or **Escape** | Finishing rearranging |
 
 <a name="Update_History"></a>
 # Update History
