@@ -26,37 +26,44 @@ const (
 func main() {
 	app := cli.NewApp()
 	app.Name = appname
-	app.Author = "tanaike [ https://github.com/tanaikech/gorearrange ] "
-	app.Email = "tanaike@hotmail.com"
-	app.Usage = "Manually rearrange text data."
-	app.Version = "1.0.2"
+	app.Authors = []*cli.Author{
+		{Name: "tanaike [ https://github.com/tanaikech/gorearrange ] ", Email: "tanaike@hotmail.com"},
+	}
+	app.UsageText = "Manually rearrange text data."
+	app.Version = "1.0.3"
 	app.Flags = []cli.Flag{
-		cli.IntFlag{
-			Name:  "step, s",
-			Value: 5,
-			Usage: "Number of steps for PageUp, PageDown.",
+		&cli.IntFlag{
+			Name:    "step, s",
+			Aliases: []string{"s"},
+			Value:   5,
+			Usage:   "Number of steps for PageUp, PageDown.",
 		},
-		cli.StringFlag{
-			Name:  "inputfile, i",
-			Value: "",
-			Usage: "Input text file that you want to rearrange.",
+		&cli.StringFlag{
+			Name:    "inputfile, i",
+			Aliases: []string{"i"},
+			Value:   "",
+			Usage:   "Input text file that you want to rearrange.",
 		},
-		cli.StringFlag{
-			Name:  "outputfile, o",
-			Value: "",
-			Usage: "Output rearranged text file.",
+		&cli.StringFlag{
+			Name:    "outputfile, o",
+			Aliases: []string{"o"},
+			Value:   "",
+			Usage:   "Output rearranged text file.",
 		},
-		cli.BoolFlag{
-			Name:  "selectmode, select",
-			Usage: "Use as select mode. In this case, users only select a value.",
+		&cli.BoolFlag{
+			Name:    "selectmode, select",
+			Aliases: []string{"select"},
+			Usage:   "Use as select mode. In this case, users only select a value.",
 		},
-		cli.BoolFlag{
-			Name:  "indexmode, index",
-			Usage: "After rearranging source data, the change of index for the source data is output.",
+		&cli.BoolFlag{
+			Name:    "indexmode, index",
+			Aliases: []string{"index"},
+			Usage:   "After rearranging source data, the change of index for the source data is output.",
 		},
-		cli.BoolFlag{
-			Name:  "history, hi",
-			Usage: "Show history of selected data.",
+		&cli.BoolFlag{
+			Name:    "history, hi",
+			Aliases: []string{"hi"},
+			Usage:   "Show history of selected data.",
 		},
 	}
 	app.Action = gorearrange
